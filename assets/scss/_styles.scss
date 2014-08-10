@@ -1,0 +1,452 @@
+@charset "UTF-8";
+
+//// Variables & Mixins ///////////////////
+
+$basic-padding: 2.5em 0 2em 0;
+$about-overlay: rgba(51,51,51,1.0);
+$slick-arrow-color: #000;
+
+@mixin headers  {
+               text-align: center;
+          padding: $basic-padding;
+}
+
+@mixin header-height($header-height) {
+     min-height: $header-height;
+}
+
+@mixin header-color($header-color) {
+     background-color: $header-color;
+}
+
+@mixin testimonial-type  {
+     font-family: 'Chronicle SSm A', 'Chronicle SSm B';
+     font-weight: 300;
+     font-style: normal;
+     line-height: 1.75em;
+     font-size: 1.5em;
+}
+
+@mixin body-italic {
+     font-family: 'Chronicle SSm A', 'Chronicle SSm B';
+     font-weight: 400;
+     font-style: italic;
+}
+
+@mixin drop-shadow {
+     -moz-box-shadow:    0 3px 5px 2px rgba(51,51,51,0.2);
+     -webkit-box-shadow: 0 3px 5px 2px rgba(51,51,51,0.2);
+     box-shadow:         0 3px 5px 2px rgba(51,51,51,0.2);
+}
+
+@mixin overlay {
+	height: 100%;
+	width: 100%;
+	background-color: #000;
+	z-index: 0;
+	position: absolute;
+	content: "";
+	opacity: 0.70;
+	top: 0;
+	left: 0;
+}
+
+@mixin image-overlay($overlay-color) {
+     background-image: -webkit-gradient(90deg, ($overlay-color),($overlay-color));
+     background-image: -webkit-linear-gradient(90deg, ($overlay-color),($overlay-color));
+     background-image: -moz-linear-gradient(90deg, ($overlay-color),($overlay-color));
+     background-image: -o-linear-gradient(90deg, ($overlay-color),($overlay-color));
+     background-image: linear-gradient(90deg, ($overlay-color),($overlay-color));
+     background-image: linear-gradient(90deg, ($overlay-color),($overlay-color));
+}
+
+@mixin forza-medium {
+     font-family: 'Forza A', 'Forza B';
+     font-weight: 500;
+     font-style: normal;
+}
+
+@mixin forza-book {
+     font-family: 'Forza A', 'Forza B';
+     font-weight: 400;
+     font-style: normal;
+}
+
+@mixin chronicle-book {
+     font-family: 'Chronicle SSm A', 'Chronicle SSm B';
+     font-weight: 400;
+     font-style: normal;
+}
+
+//// Basic Resets ///////////////////
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+body, h1, h2, h3, h4 {
+  color: #4a4a4a;
+}
+
+body {
+     @include chronicle-book;
+}
+
+html {
+     -webkit-font-smoothing: antialiased;
+}
+
+.bio.row {
+     padding-bottom: 2.5em;
+}
+
+.contain-to-grid {
+     @include drop-shadow;
+}
+
+.container {
+     height: 100%;
+     width: 100%;
+     position: relative;
+}
+
+.top-section {
+     padding-top: 7em;
+     margin-top:-7em;
+     position: relative;
+     background: url('/assets/img/home-image3.jpg') 50% 70% no-repeat;
+     background-size: cover;
+
+     &::before {
+          @include overlay;
+          @include image-overlay (rgba(153, 125, 40, 0.3));
+     }
+
+     h2,h4{
+          @include chronicle-book
+     }
+
+     h4{
+          color:#fff;
+     }
+}
+
+.top-construction {
+     background: url('/assets/img/header-construction2.jpg') 50% 25% no-repeat;
+     background-size: cover;
+     position: relative;
+     @include headers;
+     @include header-height(29em);
+
+     &::before {
+          @include overlay;
+          @include image-overlay (rgba(249, 203, 59, 1.0));
+     }
+}
+
+.top-rental {
+     background: url('/assets/img/header-construction2.jpg') 50% 25% no-repeat;
+     background-size: cover;
+     position: relative;
+     @include headers;
+     @include header-height(29em);
+
+     &::before {
+          @include overlay;
+          @include image-overlay (rgba(249, 203, 59, 1.0));
+     }
+}
+
+.top-upcoming {
+     @include headers;
+     @include header-color(#f9cb3b);
+}
+
+.top-about {
+     @include headers;
+     @include header-color(#8daed3);
+     background: url('/assets/img/header-about2.jpg') bottom center no-repeat;
+     background-size: cover;
+     position: relative;
+
+     &::before {
+          @include overlay;
+          @include image-overlay(rgba(142, 175, 209, 1.0));
+     }
+}
+
+.top-contact {
+     @include headers;
+}
+
+.home.contain-to-grid,
+.home.top-bar,
+.home.top-bar-section,
+.home.top-bar-section ul li,
+.home.right {
+     background: none !important;
+     -moz-box-shadow: none;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+}
+
+.main-message {
+     @include headers;
+     @include header-height(27em);
+
+     a {
+          background: #fff;
+          color: $primary-color;
+     }
+
+     span {
+          @include body-italic;
+          text-transform: none;
+          color: #fdeab1;
+          font-size: 1.35em;
+     }
+
+     h2 {
+          text-transform: uppercase;
+          color: #fff;
+          line-height: 1.25em;
+     }
+}
+
+.grid {
+  text-align: center;
+  padding-top: 3em;
+}
+
+.listing {
+     margin-bottom: 2em;
+}
+
+.tabs {
+     padding-bottom: 2em;
+
+     dd {
+          padding-right: 2em;
+     }
+
+     dd a {
+          @include forza-medium;
+     }
+}
+
+.tabs-content {
+
+     ul {
+          display:block;
+          margin:0;
+     }
+
+     ul li {
+          padding: 0 $column-gutter/3;
+          display:inline-block
+     }
+
+     ul li a {
+          @include forza-book;
+     }
+
+     img:hover {
+          color: #f9cb3b;
+     }
+
+     img {
+          margin-bottom: 1em;
+     }
+}
+
+.testimonials  {
+     @include testimonial-type;
+     background: #655c54;
+     color: #f9cb3b;
+     text-align: center;
+     padding: $basic-padding;
+}
+
+.modules {
+     text-align: center;
+     padding: $basic-padding;
+
+     .icons {
+          padding: 1em 0;
+     }
+
+     .left {
+          border-right: 2px solid #efefee;
+     }
+}
+
+.bios {
+     padding: $basic-padding;
+     background: #fff;
+
+     a {
+          @include forza-medium;
+     }
+}
+
+.contact {
+     padding: $basic-padding;
+}
+
+.social-links {
+     list-style-type: none;
+     font-size: 24px;
+
+     li {
+     display: inline;
+     padding: 0 .375em;
+     }
+}
+
+.footer {
+     background: #efefee;
+     text-align: center;
+     padding: $basic-padding;
+     @include forza-book;
+
+     span {
+          @include forza-medium;
+     }
+}
+
+//// Type ///////////////////
+
+h2 {
+     @include forza-medium;
+}
+
+h4 {
+     @include forza-medium;
+}
+
+.top-bar-section ul li a {
+     text-transform: uppercase;
+     @include forza-medium;
+
+     &.current {
+          color: $primary-color;
+     }
+}
+
+.home.top-bar-section ul li a {
+     color: #fff;
+}
+
+.button {
+     text-transform: uppercase;
+     @include forza-medium;
+}
+
+
+//// Utility ///////////////////
+
+.centered {
+     text-align: center;
+}
+
+.bio-pic {
+     margin-bottom: 1em;
+}
+
+.button {
+     font-size: .75rem;
+}
+
+.byline {
+     @include forza-book;
+
+     span {
+          @include forza-medium;
+     }
+}
+
+.header-icons {
+     padding-bottom: 2em;
+}
+
+.name {
+     padding-left: 1em;
+}
+
+.slick-prev:before, .slick-next:before {
+     color: #333;
+}
+
+.top-bar .toggle-topbar {
+     right: 15px;
+}
+
+.home.top-bar .toggle-topbar.menu-icon a span::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0;
+    top: 50%;
+    margin-top: -8px;
+    right: .875em;
+    box-shadow: 0 0 0 1px #fff, 0 7px 0 1px #fff, 0 14px 0 1px #fff;
+    width: 16px
+}
+
+
+//// Media Queries ///////////////////
+
+@media only screen and (max-width: 51.250em) {
+
+     .top-bar .toggle-topbar.menu-icon a {
+         height: 34px;
+         line-height: 33px;
+         padding: 0 10em 0 .875em;
+         color: #fff;
+         position: relative;
+     }
+
+     .home.top-bar.expanded .title-area {
+         background: #a28e59;
+     }
+
+     ul.home.right, ul.right {
+          background: #fff !important;
+
+          li {
+               border-bottom: 1px solid #e9e9e9;
+               padding-bottom: .5em;
+          }
+
+          li a {
+               color: #4a4a4a;
+          }
+     }
+}
+
+@media only screen and (min-width: 40.063em) {
+
+     .home.contain-to-grid,
+     .home.top-bar,
+     .home.top-bar-section,
+     .home.top-bar-section ul li a,
+     .home.right {
+          background: none !important;
+          -moz-box-shadow: none;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+     }
+}
+
+@media only screen and (max-width: 40em) {
+
+     .rentals {
+          margin-bottom: 2em;
+          padding-bottom: 2em;
+          border-bottom: 2px solid #efefee;
+     }
+
+     .tabs-content ul li {
+          padding-right: 0;
+     }
+}

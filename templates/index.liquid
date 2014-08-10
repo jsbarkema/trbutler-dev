@@ -1,0 +1,37 @@
+{% block content %}
+<div class="top-section">
+	{% include 'mainnav-home' %}
+	<div class="row main-message">
+		<div class="large-8 large-centered columns">
+			<h2>Building a family tradition for over <span>40 years.</span></h2>
+		</div>
+		<div class="large-10 large-centered columns">
+			<h4>Since 1967, Thomas R. Butler, Inc., has been a leader in the building of some of the finest developments in California's San Joaquin Valley.</h4><br>
+			<a href="about" class="button round">Meet the team</a>
+		</div><!-- End main-message -->
+	</div>
+</div><!-- End top-section -->
+<section class="row modules">
+	<div class="large-6 medium-6 columns left">
+		<div class="large-10 large-centered columns">
+			<article class="rentals">
+				<h4>Available Rental Space</h4>
+				<img src="/assets/img/icon-rental@2x.svg" width="110" height="110" class="icons" alt="Rentals Icon">
+				<p>Check out our list of currently available rental properties.</p>
+				<a href="rental-projects" class="button round">View Projects</a>
+			</article>
+		</div>
+	</div>
+	<div class="large-6 medium-6 columns">
+		<div class="large-10 large-centered columns">
+			<article class="upcoming">
+				<h4>Upcoming Projects</h4>
+				<img src="/assets/img/icon-upcoming@2x.svg" width="110" height="110" class="icons" alt="Upcoming Projects Icon">
+				<p>See our next project scheduled for completion with rental and leasing information.</p>
+				<a href="upcoming-project" class="button round">View Project</a>
+			</article>
+		</div>
+	</div>
+</section>
+{% include 'footer' %}
+{% endblock %}

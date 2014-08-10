@@ -1,0 +1,18 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Thomas R. Butler Construction</title>
+  		{{ "app.css" | asset_url | stylesheet_tag }}
+		{{ "ss-standard.css" | asset_url | stylesheet_tag }}
+  		{{ "ss-social.css" | asset_url | stylesheet_tag }}
+  		<script src="{{ "modernizr.js" | asset_url }}"></script>
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.6/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="//cloud.typography.com/76592/648324/css/fonts.css" />
+	</head>
+	<body>
+		{% block content %}{% endblock %}
+    		{% include "scripts" %}
+	</body>
+</html>

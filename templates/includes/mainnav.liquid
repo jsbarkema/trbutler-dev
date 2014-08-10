@@ -1,0 +1,19 @@
+<div class="contain-to-grid fixed large-12">
+     <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+               <li class="name">
+                    <a href="/"><img src="/assets/img/logo@2x.svg" width="206" height="69" alt="TR Butler Logo"></a>
+               </li>
+               <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+          </ul>
+          <section class="top-bar-section">
+               <ul class="right">
+                    <li><a href="/" {% if mixture.url == "index" %}class="top-bar-section ul li>a current"{% endif %}><span class="ss-icon ss-standard" style="font-size:16px;">Home</span></a></li>
+                    <li><a href="about" {% if mixture.url == "about" %}class="top-bar-section ul li>a current"{% endif %}>About</a></li>
+                    <li><a href="construction-projects" {% if mixture.url == "construction-projects" %}class="top-bar-section ul li>a current"{% endif %}>Construction Projects</a></li>
+                    <li><a href="rental-projects" {% if mixture.url == "rental-projects" %}class="top-bar-section ul li>a current"{% endif %}>Rental Projects</a></li>
+                    <li><a href="contact" {% if mixture.url == "contact" %}class="top-bar-section ul li>a current"{% endif %}>Contact</a></li>
+               </ul>
+          </section>
+     </nav>
+</div>
