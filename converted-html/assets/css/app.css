@@ -1,8 +1,8 @@
 meta.foundation-version {
-  font-family: "/5.2.3/"; }
+  font-family: "../../5.2.3"; }
 
 meta.foundation-mq-small {
-  font-family: "/only screen/";
+  font-family: "../../only screen";
   width: 0em; }
 
 meta.foundation-mq-medium {
@@ -4895,9 +4895,6 @@ th.hide-for-touch {
   th.show-for-print {
     display: table-cell !important; } }
 
-/* TODO: Fallback Images */
-/* TODO: Check Alt. Text */
-/* TODO: No space under footer */
 ul {
   padding: 0;
   margin: 0; }
@@ -4930,7 +4927,7 @@ html {
   padding-top: 7em;
   margin-top: -7em;
   position: relative;
-  background: url('/assets/img/home-image3.jpg') 50% 70% no-repeat;
+  background: url('../img/home-image3.jpg') 50% 70% no-repeat;
   background-size: cover; }
   .top-section::before {
     height: 100%;
@@ -4956,7 +4953,7 @@ html {
     color: #fff; }
 
 .top-construction {
-  background: url('/assets/img/header-construction2.jpg') 50% 25% no-repeat;
+  background: url('../img/header-construction2.jpg') 50% 25% no-repeat;
   background-size: cover;
   position: relative;
   text-align: center;
@@ -4980,7 +4977,7 @@ html {
     background-image: linear-gradient(90deg, #f9cb3b, #f9cb3b); }
 
 .top-rental {
-  background: url('/assets/img/header-rental.jpg') top center no-repeat;
+  background: url('../img/header-rental.jpg') top center no-repeat;
   background-size: cover;
   position: relative;
   text-align: center;
@@ -5012,7 +5009,7 @@ html {
   text-align: center;
   padding: 2.5em 0 2em 0;
   background-color: #8daed3;
-  background: url('/assets/img/header-about2.jpg') bottom center no-repeat;
+  background: url('../img/header-about2.jpg') bottom center no-repeat;
   background-size: cover;
   position: relative; }
   .top-about::before {
