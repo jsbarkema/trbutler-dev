@@ -4897,10 +4897,13 @@ th.hide-for-touch {
 
 /* TODO: Fallback Images */
 /* TODO: Check Alt. Text */
-/* TODO: No space under footer */
+/* TODO: Testimonial Texture */
 ul {
   padding: 0;
   margin: 0; }
+
+html, body {
+  height: 100%; }
 
 body, h1, h2, h3, h4 {
   color: #4a4a4a; }
@@ -4924,14 +4927,16 @@ html {
 .container {
   height: 100%;
   width: 100%;
-  position: relative; }
+  position: relative;
+  padding-bottom: 156px; }
 
 .top-section {
   padding-top: 7em;
   margin-top: -7em;
   position: relative;
-  background: url('/assets/img/home-image3.jpg') 50% 70% no-repeat;
-  background-size: cover; }
+  background: url('/assets/images/home-image3.jpg') 50% 70% no-repeat;
+  background-size: cover;
+  min-height: 50em; }
   .top-section::before {
     height: 100%;
     width: 100%;
@@ -4956,11 +4961,11 @@ html {
     color: #fff; }
 
 .top-construction {
-  background: url('/assets/img/header-construction2.jpg') 50% 25% no-repeat;
+  background: url('/assets/images/header-construction2.jpg') 0 40% no-repeat;
   background-size: cover;
   position: relative;
   text-align: center;
-  padding: 2.5em 0 2em 0;
+  padding: 4.5em 0 4.5em 0;
   min-height: 29em; }
   .top-construction::before {
     height: 100%;
@@ -4980,11 +4985,11 @@ html {
     background-image: linear-gradient(90deg, #f9cb3b, #f9cb3b); }
 
 .top-rental {
-  background: url('/assets/img/header-rental.jpg') top center no-repeat;
+  background: url('/assets/images/header-rental.jpg') 0 20% no-repeat;
   background-size: cover;
   position: relative;
   text-align: center;
-  padding: 2.5em 0 2em 0;
+  padding: 4.5em 0 4.5em 0;
   min-height: 29em; }
   .top-rental::before {
     height: 100%;
@@ -5005,14 +5010,14 @@ html {
 
 .top-upcoming {
   text-align: center;
-  padding: 2.5em 0 2em 0;
+  padding: 4.5em 0 4.5em 0;
   background-color: #f9cb3b; }
 
 .top-about {
   text-align: center;
-  padding: 2.5em 0 2em 0;
+  padding: 4.5em 0 4.5em 0;
   background-color: #8daed3;
-  background: url('/assets/img/header-about2.jpg') bottom center no-repeat;
+  background: url('/assets/images/header-about2.jpg') bottom center no-repeat;
   background-size: cover;
   position: relative; }
   .top-about::before {
@@ -5034,7 +5039,12 @@ html {
 
 .top-contact {
   text-align: center;
-  padding: 2.5em 0 2em 0; }
+  padding: 4.5em 0 4.5em 0;
+  background-color: #f9cb3b;
+  background: url('/assets/images/big-map.jpg') center 50% no-repeat;
+  background-size: cover;
+  height: 30em;
+  margin-bottom: 3em; }
 
 .home.contain-to-grid, .home.top-bar, .home.top-bar-section, .home.top-bar-section ul li, .home.right {
   background: none !important;
@@ -5044,8 +5054,9 @@ html {
 
 .main-message {
   text-align: center;
-  padding: 2.5em 0 2em 0;
-  min-height: 27em; }
+  padding: 4.5em 0 4.5em 0;
+  min-height: 27em;
+  padding-top: 8em; }
   .main-message a {
     background: #fff;
     color: #8DAED3; }
@@ -5067,11 +5078,19 @@ html {
 
 .listing {
   margin-bottom: 2em; }
+  .listing img:hover {
+    opacity: 0.3; }
+
+.listing-image {
+  background: #f9cb3b;
+  margin-bottom: 1em; }
 
 .tabs {
-  padding-bottom: 2em; }
+  padding-bottom: 2em;
+  margin: 0 auto;
+  display: inline-block; }
   .tabs dd {
-    padding-right: 2em; }
+    padding: 0 1em; }
   .tabs dd a {
     font-family: 'Forza A', 'Forza B';
     font-weight: 500;
@@ -5087,10 +5106,6 @@ html {
   font-family: 'Forza A', 'Forza B';
   font-weight: 400;
   font-style: normal; }
-.tabs-content img:hover {
-  color: #f9cb3b; }
-.tabs-content img {
-  margin-bottom: 1em; }
 
 .testimonials {
   font-family: 'Chronicle SSm A', 'Chronicle SSm B';
@@ -5098,21 +5113,22 @@ html {
   font-style: normal;
   line-height: 1.75em;
   font-size: 1.5em;
-  background: #655c54;
+  /*background: #655c54;*/
+  background: url('/assets/images/chalkboard.png') #655c54;
   color: #f9cb3b;
   text-align: center;
-  padding: 2.5em 0 2em 0; }
+  padding: 4.5em 0 4.5em 0; }
 
 .modules {
   text-align: center;
-  padding: 2.5em 0 2em 0; }
+  padding: 4.5em 0 4.5em 0; }
   .modules .icons {
     padding: 1em 0; }
   .modules .left {
     border-right: 2px solid #efefee; }
 
 .bios {
-  padding: 2.5em 0 2em 0;
+  padding: 4.5em 0 4.5em 0;
   background: #fff; }
   .bios a {
     font-family: 'Forza A', 'Forza B';
@@ -5120,7 +5136,10 @@ html {
     font-style: normal; }
 
 .contact {
-  padding: 2.5em 0 2em 0; }
+  padding: 4.5em 0 4.5em 0;
+  text-align: center; }
+  .contact p {
+    margin: 0; }
 
 .social-links {
   list-style-type: none;
@@ -5132,7 +5151,7 @@ html {
 .footer {
   background: #efefee;
   text-align: center;
-  padding: 2.5em 0 2em 0;
+  padding: 4.5em 0 4.5em 0;
   font-family: 'Forza A', 'Forza B';
   font-weight: 400;
   font-style: normal; }
@@ -5141,12 +5160,98 @@ html {
     font-weight: 500;
     font-style: normal; }
 
-h2 {
-  font-family: 'Forza A', 'Forza B';
-  font-weight: 500;
-  font-style: normal; }
+.proj-details {
+  padding: 0 0 3em 0; }
 
-h4 {
+.proj-images {
+  padding: 2.5em 0 0 0; }
+
+.alt-links {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 1.25em 0 0 0;
+  margin-bottom: 2em; }
+  .alt-links a {
+    font-family: 'Forza A', 'Forza B';
+    font-weight: 400;
+    font-style: normal;
+    margin-right: 2em;
+    background: #d1d3d4; }
+  .alt-links a.plain {
+    background: none; }
+
+.related {
+  text-align: center; }
+
+.related-projects {
+  font-family: 'Forza A', 'Forza B';
+  font-weight: 400;
+  font-style: normal;
+  padding: 2.5em 0 3em 0;
+  border-top: 1px solid #efefee; }
+  .related-projects:hover {
+    background: #f8f8f8; }
+  .related-projects img {
+    margin-bottom: 1em; }
+
+.related-projects-mid {
+  font-family: 'Forza A', 'Forza B';
+  font-weight: 400;
+  font-style: normal;
+  padding: 2.5em 0 3em 0;
+  border-top: 1px solid #efefee;
+  border-left: 1px solid #efefee;
+  border-right: 1px solid #efefee; }
+  .related-projects-mid:hover {
+    background: #f8f8f8; }
+  .related-projects-mid img {
+    margin-bottom: 1em; }
+
+.specs-list {
+  font-family: 'Forza A', 'Forza B';
+  font-weight: 400;
+  font-style: normal; }
+  .specs-list ul {
+    border-top: 1px solid #ccc; }
+  .specs-list li {
+    list-style-type: none;
+    line-height: 1.25em;
+    border-bottom: 1px solid #ccc;
+    padding: 0.625em 0; }
+  .specs-list span {
+    font-family: 'Forza A', 'Forza B';
+    font-weight: 500;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 0.875em; }
+
+.entry {
+  padding: 2.5em 0 3em 0;
+  border-bottom: 1px solid #ccc; }
+  .entry ul {
+    font-family: 'Forza A', 'Forza B';
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 1.5em;
+    border-top: 1px solid #ccc; }
+  .entry li {
+    border-bottom: 1px solid #ccc;
+    padding: 0.25em 0;
+    list-style-type: none; }
+  .entry span {
+    font-family: 'Forza A', 'Forza B';
+    font-weight: 500;
+    font-style: normal; }
+
+.entry-date {
+  margin-left: 0.9em;
+  margin-bottom: 2em; }
+  .entry-date p {
+    font-family: 'Forza A', 'Forza B';
+    font-weight: 500;
+    font-style: normal; }
+
+h1, h2, h3, h4 {
   font-family: 'Forza A', 'Forza B';
   font-weight: 500;
   font-style: normal; }
@@ -5163,19 +5268,25 @@ h4 {
   color: #fff; }
 
 .button {
-  text-transform: uppercase;
   font-family: 'Forza A', 'Forza B';
   font-weight: 500;
-  font-style: normal; }
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 0.75rem; }
+
+::selection {
+  background: #f9cb3b;
+  /* WebKit/Blink Browsers */ }
+
+::-moz-selection {
+  background: #f9cb3b;
+  /* Gecko Browsers */ }
 
 .centered {
   text-align: center; }
 
 .bio-pic {
   margin-bottom: 1em; }
-
-.button {
-  font-size: 0.75rem; }
 
 .byline {
   font-family: 'Forza A', 'Forza B';
@@ -5188,6 +5299,10 @@ h4 {
 
 .header-icons {
   padding-bottom: 2em; }
+
+.ss-icon {
+  font-size: 20px;
+  margin-right: 0.5em; }
 
 .name {
   padding-left: 1em; }
@@ -5238,5 +5353,15 @@ h4 {
     margin-bottom: 2em;
     padding-bottom: 2em;
     border-bottom: 2px solid #efefee; }
+  .tabs {
+    margin: 0 auto;
+    display: inline-block; }
+    .tabs dd {
+      padding: 0 1em; }
   .tabs-content ul li {
-    padding-right: 0; } }
+    padding-right: 0;
+    padding-left: 0; }
+  .top-section {
+    min-height: 20em; }
+  .main-message {
+    padding: 2.5em 0 3em 0; } }

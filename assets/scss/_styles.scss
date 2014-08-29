@@ -2,16 +2,19 @@
 
 /* TODO: Fallback Images */
 /* TODO: Check Alt. Text */
-/* TODO: No space under footer */
+/* TODO: Testimonial Texture */
 
 //// Variables & Mixins ///////////////////
 
-$basic-padding: 2.5em 0 2em 0;
+$basic-padding: 4.5em 0 4.5em 0;
+$small-padding: 2.5em 0 3em 0;
+$small-notop: 0 0 3em 0;
+$small-nobottom: 2.5em 0 0 0;
 $about-overlay: rgba(51,51,51,1.0);
 $slick-arrow-color: #000;
 
 @mixin headers  {
-               text-align: center;
+          text-align: center;
           padding: $basic-padding;
 }
 
@@ -76,6 +79,12 @@ $slick-arrow-color: #000;
      font-style: normal;
 }
 
+@mixin forza-bold {
+     font-family: 'Forza A', 'Forza B';
+     font-weight: 700;
+     font-style: normal;
+}
+
 @mixin chronicle-book {
      font-family: 'Chronicle SSm A', 'Chronicle SSm B';
      font-weight: 400;
@@ -86,6 +95,10 @@ $slick-arrow-color: #000;
 ul {
   padding: 0;
   margin: 0;
+}
+
+html, body {
+     height:100%;
 }
 
 body, h1, h2, h3, h4 {
@@ -112,14 +125,16 @@ html {
      height: 100%;
      width: 100%;
      position: relative;
+     padding-bottom: 156px;
 }
 
 .top-section {
      padding-top: 7em;
      margin-top:-7em;
      position: relative;
-     background: url('/assets/img/home-image3.jpg') 50% 70% no-repeat;
+     background: url('/assets/images/home-image3.jpg') 50% 70% no-repeat;
      background-size: cover;
+     min-height: 50em;
 
      &::before {
           @include overlay;
@@ -136,7 +151,7 @@ html {
 }
 
 .top-construction {
-     background: url('/assets/img/header-construction2.jpg') 50% 25% no-repeat;
+     background: url('/assets/images/header-construction2.jpg') 0 40% no-repeat;
      background-size: cover;
      position: relative;
      @include headers;
@@ -149,7 +164,7 @@ html {
 }
 
 .top-rental {
-     background: url('/assets/img/header-rental.jpg') top center no-repeat;
+     background: url('/assets/images/header-rental.jpg') 0 20% no-repeat;
      background-size: cover;
      position: relative;
      @include headers;
@@ -169,7 +184,7 @@ html {
 .top-about {
      @include headers;
      @include header-color(#8daed3);
-     background: url('/assets/img/header-about2.jpg') bottom center no-repeat;
+     background: url('/assets/images/header-about2.jpg') bottom center no-repeat;
      background-size: cover;
      position: relative;
 
@@ -181,6 +196,11 @@ html {
 
 .top-contact {
      @include headers;
+     @include header-color(#f9cb3b);
+     background: url('/assets/images/big-map.jpg') center 50% no-repeat;
+     background-size: cover;
+     height: 30em;
+     margin-bottom: 3em;
 }
 
 .home.contain-to-grid,
@@ -197,6 +217,7 @@ html {
 .main-message {
      @include headers;
      @include header-height(27em);
+     padding-top: 8em;
 
      a {
           background: #fff;
@@ -224,13 +245,25 @@ html {
 
 .listing {
      margin-bottom: 2em;
+
+
+     img:hover {
+          opacity: .3;
+     }
+}
+
+.listing-image {
+     background: #f9cb3b;
+     margin-bottom: 1em;
 }
 
 .tabs {
      padding-bottom: 2em;
+     margin: 0 auto;
+     display: inline-block;
 
      dd {
-          padding-right: 2em;
+          padding: 0 1em;
      }
 
      dd a {
@@ -253,19 +286,12 @@ html {
      ul li a {
           @include forza-book;
      }
-
-     img:hover {
-          color: #f9cb3b;
-     }
-
-     img {
-          margin-bottom: 1em;
-     }
 }
 
 .testimonials  {
      @include testimonial-type;
-     background: #655c54;
+     /*background: #655c54;*/
+     background: url('/assets/images/chalkboard.png') #655c54;
      color: #f9cb3b;
      text-align: center;
      padding: $basic-padding;
@@ -295,6 +321,11 @@ html {
 
 .contact {
      padding: $basic-padding;
+     text-align: center;
+
+     p {
+          margin:0;
+     }
 }
 
 .social-links {
@@ -318,13 +349,121 @@ html {
      }
 }
 
-//// Type ///////////////////
-
-h2 {
-     @include forza-medium;
+.proj-details {
+     padding: $small-notop;
 }
 
-h4 {
+.proj-images {
+     padding: $small-nobottom;
+}
+
+.alt-links {
+     border-top: 1px solid #ccc;
+     border-bottom: 1px solid #ccc;
+     padding: 1.25em 0 0 0;
+     margin-bottom: 2em;
+
+     a {
+          @include forza-book;
+          margin-right: 2em;
+          background: #d1d3d4;
+     }
+
+     a.plain {
+          background: none;
+     }
+}
+
+
+.related {
+     text-align: center;
+}
+
+.related-projects {
+     @include forza-book;
+     padding: $small-padding;
+     border-top: 1px solid #efefee;
+
+     &:hover {
+          background: #f8f8f8;
+     }
+
+     img {
+          margin-bottom: 1em;
+     }
+}
+
+.related-projects-mid {
+     @include forza-book;
+     padding: $small-padding;
+     border-top: 1px solid #efefee;
+     border-left: 1px solid #efefee;
+     border-right: 1px solid #efefee;
+
+     &:hover {
+          background: #f8f8f8;
+     }
+
+     img {
+          margin-bottom: 1em;
+     }
+}
+
+.specs-list {
+     @include forza-book;
+
+     ul {
+          border-top: 1px solid #ccc;
+     }
+
+     li {
+          list-style-type: none;
+          line-height: 1.25em;
+          border-bottom: 1px solid #ccc;
+          padding: .625em 0;
+     }
+
+     span {
+          @include forza-medium;
+          text-transform: uppercase;
+          font-size: .875em;
+     }
+}
+
+.entry {
+     padding: $small-padding;
+     border-bottom: 1px solid #ccc;
+
+     ul {
+          @include forza-book;
+          margin-bottom: 1.5em;
+          border-top: 1px solid #ccc;
+     }
+
+     li {
+          border-bottom: 1px solid #ccc;
+          padding: .25em 0;
+          list-style-type: none;
+     }
+
+     span {
+          @include forza-medium;
+     }
+}
+
+.entry-date {
+     margin-left: .9em;
+     margin-bottom: 2em;
+
+     p {
+          @include forza-medium;
+     }
+}
+
+
+//// Type ///////////////////
+
+h1, h2, h3, h4 {
      @include forza-medium;
 }
 
@@ -342,12 +481,20 @@ h4 {
 }
 
 .button {
-     text-transform: uppercase;
      @include forza-medium;
+     text-transform: uppercase;
+     font-size: .75rem;
 }
 
 
 //// Utility ///////////////////
+
+::selection {
+  background: #f9cb3b; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #f9cb3b; /* Gecko Browsers */
+}
 
 .centered {
      text-align: center;
@@ -355,10 +502,6 @@ h4 {
 
 .bio-pic {
      margin-bottom: 1em;
-}
-
-.button {
-     font-size: .75rem;
 }
 
 .byline {
@@ -371,6 +514,11 @@ h4 {
 
 .header-icons {
      padding-bottom: 2em;
+}
+
+.ss-icon {
+     font-size: 20px;
+     margin-right: .5em;
 }
 
 .name {
@@ -450,7 +598,25 @@ h4 {
           border-bottom: 2px solid #efefee;
      }
 
+     .tabs {
+          margin: 0 auto;
+          display: inline-block;
+
+          dd {
+               padding: 0 1em;
+          }
+     }
+
      .tabs-content ul li {
           padding-right: 0;
+          padding-left: 0;
+     }
+
+     .top-section {
+          min-height: 20em;
+     }
+
+     .main-message {
+          padding: $small-padding;
      }
 }
